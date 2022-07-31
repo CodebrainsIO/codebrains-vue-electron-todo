@@ -24,7 +24,7 @@
               >
                 <template #reference>
                   <el-button
-                    size="mini"
+                    size="default"
                     type="danger"
                     >Delete</el-button
                   >
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { reactive, ref, defineProps, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { ElMessage } from "element-plus";
 import TodoForm from './TodoForm.vue';
 import axios from 'axios';
@@ -72,7 +72,7 @@ const loadTodos = async () => {
 }
 const createTodo = async (todo: Todo) => {
     console.log('From the child:', todo);
-    /*await axios.post(`http://localhost:8000/todos`, {
+    await axios.post(`http://localhost:8000/todos`, {
       title: todo.title,
       completed: todo.completed,
     });
@@ -80,9 +80,10 @@ const createTodo = async (todo: Todo) => {
         message: "Todo Created",
         type: "success",
       });
-    await loadTodos();*/
+    await loadTodos();
 }
 const updateTodo = async (todo: Todo) => {
+    console.log('Update Todo', todo);
     await axios.put(`http://localhost:8000/todos/${todo.id}`, {
       title: todo.title,
       completed: todo.completed,

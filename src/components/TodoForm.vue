@@ -3,6 +3,7 @@
     :model="todoForm"
     :inline="true"
     class="demo-form-inline"
+    size="default"
   >
     <el-form-item label="Title" prop="title">
       <el-input v-model="todoForm.title" placeholder="Enter Todo"></el-input>
