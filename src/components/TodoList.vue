@@ -55,7 +55,7 @@ import TodoForm from './TodoForm.vue';
 import axios from 'axios';
 
 interface Todo {
-  id?: number;
+  id?: number | string;
   title: string;
   completed: boolean;
 }
